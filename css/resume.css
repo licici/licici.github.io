@@ -272,9 +272,18 @@ html, body {
     height: 100%;
     font-family: Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
-
+canvas {
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+}
 .width-1000 {
-    max-width: 1000px;
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
     box-sizing: border-box;
     padding: 4px 2px 0;
     margin: auto;
@@ -286,7 +295,7 @@ html, body {
     display: -webkit-flex;
 }
 .full-layout .left{
-    width: 300px;
+    width: 280px;
 }
 .full-layout .right {
     flex: 1;
