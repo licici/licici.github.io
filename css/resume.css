@@ -291,14 +291,22 @@ html canvas {
     background-color: #eaedec;
 }
 .full-layout {
-    display: flex;
-    display: -webkit-flex;
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+    display: -ms-flexbox; /* TWEENER - IE 10 */ 
+    display: -webkit-flex; /* NEW - Chrome */ 
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .full-layout .left{
     width: 280px;
 }
 .full-layout .right {
     flex: 1;
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */ 
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    -webkit-flex: 1; /* Chrome */ 
+    -ms-flex: 1; /* IE 10 */ 
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .card {
     margin: 2px;
@@ -362,4 +370,16 @@ html canvas {
 .card .content .header p.common-p {
     font-size: 14px;
     color: #333;
+}
+
+@media screen and (max-width:800px) {
+    .full-layout {
+        display: block;
+    }
+    .full-layout .left{
+        width: auto;
+    }
+    .card dd {
+        margin-left: 0;
+    }
 }
